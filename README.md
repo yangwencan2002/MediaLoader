@@ -72,6 +72,7 @@ DEMO请直接参见源码中的sample工程，它就几种常见的边下边播�
 
 ## FAQ常见问题
 **1. Q：MediaLoader的默认初始化配置是怎么样的？**
+<br>
 A：
 
 |参数名|默认值|
@@ -85,6 +86,7 @@ A：
 |下载线程优先级|Thread.MAX_PRIORITY|
 
 **2. Q：如何更改默认初始化配置？**
+<br>
 A：默认的配置参数相对来说已经比较合理，如果不满足需求可以通过以下代码进行更改：
 ```
         MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
