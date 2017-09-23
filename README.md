@@ -84,7 +84,7 @@ A：
 |下载线程数|3|
 |下载线程优先级|Thread.MAX_PRIORITY|
 
-**2、Q：如何更改默认初始化配置？**  
+**2、Q：如何更改默认初始化配置？**
 A：默认的配置参数相对来说已经比较合理，如果不满足需求可以通过以下代码进行更改：
 ```
         MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
