@@ -18,7 +18,6 @@
 | 获取代理url| MediaLoader#getProxyUrl(String url)|
 | 是否缓存文件| MediaLoader#isCached(String url)|
 | 获取缓存的文件| MediaLoader#getCacheFile(String url)|
-| 清除缓存目录| MediaLoader#cleanCacheDir()|
 | 添加下载监听器| MediaLoader#addDownloadListener(String url, DownloadListener listener)|
 | 删除下载监听器| MediaLoader#removeDownloadListener(String url, DownloadListener listener)|
 | 删除下载监听器| MediaLoader#removeDownloadListener(DownloadListener listener)|
@@ -68,7 +67,8 @@ videoView.setVideoPath(proxyUrl);
 
 ## DEMO
 DEMO请直接参见源码中的sample工程，它就几种常见的边下边播场景进行展示如何使用，如图所示：
-![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.png)
+![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.jpg)
+![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.jpg)
 
 ## FAQ常见问题
 **1. Q：MediaLoader的默认初始化配置是怎么样的？**
