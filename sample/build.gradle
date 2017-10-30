@@ -24,11 +24,3 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
-
-afterEvaluate {
-    project.tasks.withType(Test) {
-        systemProperties.put('proxySet', true)
-        systemProperties.put('proxyHost', 'dev-proxy.oa.com')
-        systemProperties.put('proxyPort', 8080)
-    }
-}

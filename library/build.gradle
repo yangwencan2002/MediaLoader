@@ -26,14 +26,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    testOptions {
-        unitTests.all {
-            //私服地址，按需更改
-            systemProperty 'robolectric.dependency.repo.url', 'http://maven.oa.com/nexus/service/local/repositories/android/content'
-            systemProperty 'robolectric.dependency.repo.id', 'local'
-        }
-    }
 }
 
 dependencies {
