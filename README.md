@@ -1,4 +1,6 @@
 # MediaLoader
+[![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/) [ ![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
+
 [简体中文README](./README.zh_cn.md)
 ## Table of Content
 - [Introduction](#introduction)
