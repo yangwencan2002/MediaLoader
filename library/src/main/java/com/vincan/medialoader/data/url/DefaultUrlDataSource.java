@@ -50,7 +50,7 @@ public class DefaultUrlDataSource extends BaseUrlDataSource {
             mUrlConnection = (HttpURLConnection) new URL(mUrlDataSourceInfo.url).openConnection(Proxy.NO_PROXY);
             if (offset > 0) {
                 mUrlConnection.setRequestProperty(HttpHeaders.Names.RANGE, "bytes=" + offset + "-");
-            };
+            }
             String mime = mUrlConnection.getContentType();
             mInputStream = new BufferedInputStream(mUrlConnection.getInputStream(), Util.DEFAULT_BUFFER_SIZE);
             long length = readSourceAvailableBytes(mUrlConnection, offset, mUrlConnection.getResponseCode());

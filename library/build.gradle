@@ -1,19 +1,37 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
 apply plugin: 'com.android.library'
+apply plugin: 'bintray-release'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "25.0.0"
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests.all {
+            //私服地址，按需更改
+            systemProperty 'robolectric.dependency.repo.url', 'http://maven.oa.com/nexus/service/local/repositories/android/content'
+            systemProperty 'robolectric.dependency.repo.id', 'local'
         }
     }
 }
@@ -23,4 +41,25 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile "org.robolectric:robolectric:3.3.2"
     testCompile 'org.mockito:mockito-all:1.9.5'
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+//tasks.withType(Javadoc) {
+//    options {
+//        encoding "UTF-8"
+//        charSet 'UTF-8'
+//        links "http://docs.oracle.com/javase/7/docs/api"
+//    }
+//}
+
+publish {
+    userOrg = 'yangwencan2002'
+    groupId = 'com.vincan'
+    artifactId = 'medialoader'
+    publishVersion = android.defaultConfig.versionName
+    desc = 'Cache video/audio while playing for any android media player'
+    website = 'https://github.com/yangwencan2002/MediaLoader'
 }

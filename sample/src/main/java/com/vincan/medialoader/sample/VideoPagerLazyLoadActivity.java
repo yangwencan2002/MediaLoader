@@ -7,9 +7,8 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 
-import com.vincan.medialoader.MediaLoader;
-import com.vincan.medialoader.download.DownloadListener;
 import com.vincan.medialoader.DownloadManager;
+import com.vincan.medialoader.download.DownloadListener;
 
 import java.io.File;
 
@@ -20,7 +19,7 @@ import java.io.File;
  */
 public class VideoPagerLazyLoadActivity extends FragmentActivity implements DownloadListener {
 
-    private static final String TAG = "VideoPagerLazyLoadActivity";
+    private static final String TAG = VideoPagerLazyLoadActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle state) {

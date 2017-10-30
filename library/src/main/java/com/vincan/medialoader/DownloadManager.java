@@ -207,16 +207,26 @@ public final class DownloadManager {
 
         private List<Pair<String, String>> requestHeaders = new ArrayList<Pair<String, String>>();
 
-        private boolean forceDownload;
+        private boolean forceDownload = false;
 
         public Request(String url) {
             this.url = Util.notEmpty(url);
         }
 
+        /**
+         * 获取url
+         *
+         * @return
+         */
         public String getUrl() {
             return url;
         }
 
+        /**
+         * 获取请求头部
+         *
+         * @return
+         */
         public List<Pair<String, String>> getRequestHeaders() {
             return requestHeaders;
         }
@@ -243,9 +253,9 @@ public final class DownloadManager {
         }
 
         /**
-         * 是否强制下载，不管本地是否已存在
+         * 是否强制下载
          *
-         * @param forceDownload
+         * @param forceDownload true表示强制下载并覆盖本地文件，false表示本地存在则不下载
          * @return
          */
         public Request forceDownload(boolean forceDownload) {
