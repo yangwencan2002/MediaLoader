@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MediaLoaderSample</string>
+    <string name="clean_cache">清空缓存</string>
+    <string name="scene_single_video">单个视频边下边播场景</string>
+    <string name="scene_single_audio">单个音频边下边播场景</string>
+    <string name="scene_viewpager_preload">ViewPager预加载场景</string>
+    <string name="scene_viewpager_lazyload">ViewPager懒加载+预下载场景</string>
+</resources>

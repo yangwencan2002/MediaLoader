@@ -76,8 +76,8 @@ videoView.setVideoPath(proxyUrl);
 
 ## DEMO
 DEMO请直接参见源码中的sample工程，它就几种常见的边下边播场景进行展示如何使用，如图所示：
-![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.jpg)
-![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.jpg)
+![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.zh_cn.jpg)
+![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.zh_cn.jpg)
 
 ## FAQ常见问题
 #### 1.MediaLoader的默认初始化配置是怎么样的？
