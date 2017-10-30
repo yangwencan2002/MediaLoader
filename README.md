@@ -5,9 +5,6 @@
 - [Features](#features)
 - [Quick start](#quick-start)
 - [Manual](#manual)
-  - [MediaLoader](#M]medialoader)
-  - [MediaLoaderConfig.Builder](#mediaLoaderconfig.builder)
-  - [DownloadManager](#downloadmanager)
 - [Sample](#sample)
 - [FAQ](#faq)
 - [Where released?](#where-released)
@@ -39,7 +36,7 @@ videoView.setVideoPath(proxyUrl);
 ```
 
 ## Manual
-#### MediaLoader：
+#### MediaLoader
 
 |function|API|
 |------|------|
@@ -55,7 +52,7 @@ videoView.setVideoPath(proxyUrl);
 | resume download| MediaLoader#resumeDownload(String url)|
 | destroy MediaLoader instance| MediaLoader#destroy()|
 
-#### MediaLoaderConfig.Builder：
+#### MediaLoaderConfig.Builder
 
 |function|API|
 |------|------|
@@ -69,7 +66,7 @@ videoView.setVideoPath(proxyUrl);
 | set download ExecutorService| MediaLoaderConfig.Builder#downloadExecutorService(ExecutorService executorService)|
 | new MediaLoaderConfig instance| MediaLoaderConfig.Builder#build()|
 
-#### DownloadManager：
+#### DownloadManager
 
 |function|API|
 |------|------|
@@ -88,7 +85,7 @@ videoView.setVideoPath(proxyUrl);
 | clean cache dir| DownloadManager#cleanCacheDir()|
 
 ## Sample
-See `sample` project.
+See `sample` project.<br>
 ![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.jpg)
 ![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.jpg)
 
