@@ -1,5 +1,22 @@
 # MediaLoader-音视频边下边播组件
-[![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/) [ ![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
+[![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+## 目录
+- [简介](#简介)
+- [功能特性](#功能特性)
+- [快速上手](#快速上手)
+- [使用说明](#使用说明)
+  - [监听下载状态](#监听下载状态)
+  - [更改初始配置](#更改初始配置)
+  - [预下载](#预下载)
+- [功能清单](#功能清单)
+- [DEMO](#demo)
+- [FAQ](#faq)
+- [更新日志](#更新日志)
+- [版本发布](#版本发布)
+- [License](#license)
 
 ## 简介
 一行代码就能支持任意播放器的音/视频边下边播功能！MediaLoader是一个可应用于音/视频的边下边播、缓存管理和预下载等场景的音/视频加载组件。
@@ -25,10 +42,43 @@ String proxyUrl = MediaLoader.getInstance(getContext()).getProxyUrl(VIDEO_URL);
 videoView.setVideoPath(proxyUrl);
 ```
 
+## 使用说明
+
+#### 监听下载状态
+添加监听回调：
+
+`MediaLoader.addDownloadListener(String url, DownloadListener listener)`
+
+不要忘记删除回调以免内存泄漏：
+
+`MediaLoader.removeDownloadListener(String url, DownloadListener listener)`
+
+#### 更改初始配置
+你可以通过`MediaLoaderConfig`更改默认的初始配置：
+```java
+        MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
+                .cacheRootDir(DefaultConfigFactory.createCacheRootDir(this, "your_cache_dir"))//directory for cached files
+                .cacheFileNameGenerator(new HashCodeFileNameCreator())//names for cached files
+                .maxCacheFilesCount(100)//max files count
+                .maxCacheFilesSize(100 * 1024 * 1024)//max files size
+                .maxCacheFileTimeLimit(5 * 24 * 60 * 60)//max file time
+                .downloadThreadPoolSize(3)//download thread size
+                .downloadThreadPriority(Thread.NORM_PRIORITY)//download thread priority
+                .build();
+        MediaLoader.getInstance(this).init(mediaLoaderConfig);
+```
+
+#### 预下载
+在弱网络环境下，边下边播的体验并不太好，所以预下载变成边下边播的一个好的补充，事先就把音/视频下载到本地，避免用户长时间等待。
+使用`DownloadManager.enqueue(Request request, DownloadListener listener)`开始预下载，`DownloadManager.stop(String url)`停止预下载。
+`DownloadManager`还提供了其他方法如暂停、继续下载等便捷的方法。
+
+更多细节请参考[功能清单](#功能清单)。
+
 ## 功能清单
 #### 边下边播（MediaLoader）：
 
-|功能|API|
+|描述|API|
 |------|------|
 | 创建实例| MediaLoader#getInstance(Context context)|
 | 初始化设置| MediaLoader#init(MediaLoaderConfig mediaLoaderConfig)|
@@ -44,7 +94,7 @@ videoView.setVideoPath(proxyUrl);
 
 #### MediaLoader初始化设置（MediaLoaderConfig.Builder）：
 
-|功能|API|
+|描述|API|
 |------|------|
 | 设置缓存目录| MediaLoaderConfig.Builder#cacheRootDir(File file)|
 | 设置缓存文件命名生成器| MediaLoaderConfig.Builder#cacheFileNameGenerator(FileNameCreator fileNameCreator)|
@@ -58,7 +108,7 @@ videoView.setVideoPath(proxyUrl);
 
 #### 预下载（DownloadManager）：
 
-|功能|API|
+|描述|API|
 |------|------|
 | 创建实例| DownloadManager#getInstance(Context context)|
 | 启动下载| DownloadManager#enqueue(Request request)|
@@ -79,7 +129,7 @@ DEMO请直接参见源码中的sample工程，它就几种常见的边下边播�
 ![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample.zh_cn.jpg)
 ![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.zh_cn.jpg)
 
-## FAQ常见问题
+## FAQ
 #### 1.MediaLoader的默认初始化配置是怎么样的？
 
 |参数名|默认值|
@@ -92,27 +142,15 @@ DEMO请直接参见源码中的sample工程，它就几种常见的边下边播�
 |下载线程数|3|
 |下载线程优先级|Thread.MAX_PRIORITY|
 
-#### 2.如何更改默认初始化配置？
-默认的配置参数相对来说已经比较合理，如果不满足需求可以通过以下代码进行更改：
-```
-        MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
-                .cacheRootDir(DefaultConfigFactory.createCacheRootDir(this, "my_cache_dir"))
-                .cacheFileNameGenerator(new HashCodeFileNameCreator())//组件内置的hash code命名规则
-                .maxCacheFilesCount(100)
-                .maxCacheFilesSize(100 * 1024 * 1024)
-                .maxCacheFileTimeLimit(5 * 24 * 60 * 60)
-                .downloadThreadPoolSize(3)
-                .downloadThreadPriority(Thread.NORM_PRIORITY)
-                .build();
-        MediaLoader.getInstance(this).init(mediaLoaderConfig);
-```
+## 更新日志
+[release notes](https://github.com/yangwencan2002/MediaLoader/releases)
 
 ## 版本发布
 [bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
 
 ## License
 
-    Copyright 2017 Vincan Yang
+    Copyright 2016-2017 Vincan Yang
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

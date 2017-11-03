@@ -1,15 +1,22 @@
 # MediaLoader
-[![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/) [ ![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
+[![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 [简体中文README](./README.zh_cn.md)
 ## Table of Content
 - [Introduction](#introduction)
 - [Features](#features)
 - [Quick start](#quick-start)
-- [Manual](#manual)
+- [Usage](#usage)
+  - [Listen downloading status](#listen-downloading-status)
+  - [Change initial configuration](#change-initial-configuration)
+  - [Pre-download](#pre-download)
+- [API list](#api-list)
 - [Sample](#sample)
 - [FAQ](#faq)
-- [Where released?](#where-released)
+- [Change log](#change-log)
+- [Where released](#where-released)
 - [License](#license)
 
 ## Introduction
@@ -20,7 +27,7 @@
 - offline work with cached data,no download again;
 - working with any media player on android(MediaPlayer,VideoView,ExoPlayer,ijkplayer...);
 - cache management(cache dir change,cache file rename,max cache files size limit, max cache files count limit...);
-- pre download.
+- pre-download available,can pre-download the audio/video to avoid waiting.
 
 ## Quick start
 Just add dependency (`MediaLoader` was released in jcenter):
@@ -37,10 +44,47 @@ String proxyUrl = MediaLoader.getInstance(getContext()).getProxyUrl(VIDEO_URL);
 videoView.setVideoPath(proxyUrl);
 ```
 
-## Manual
+## Usage
+
+#### Listen downloading status
+Add callback to listen downloading status:
+
+`MediaLoader.addDownloadListener(String url, DownloadListener listener)`
+
+don't forget to remove listener to avoid memory leaks:
+
+`MediaLoader.removeDownloadListener(String url, DownloadListener listener)`
+
+#### Change initial configuration
+You can change the default initial configuration with help of `MediaLoaderConfig`:
+```java
+        MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
+                .cacheRootDir(DefaultConfigFactory.createCacheRootDir(this, "your_cache_dir"))//directory for cached files
+                .cacheFileNameGenerator(new HashCodeFileNameCreator())//names for cached files
+                .maxCacheFilesCount(100)//max files count
+                .maxCacheFilesSize(100 * 1024 * 1024)//max files size
+                .maxCacheFileTimeLimit(5 * 24 * 60 * 60)//max file time
+                .downloadThreadPoolSize(3)//download thread size
+                .downloadThreadPriority(Thread.NORM_PRIORITY)//download thread priority
+                .build();
+        MediaLoader.getInstance(this).init(mediaLoaderConfig);
+```
+
+#### Pre-download
+Sometimes the `MediaLoader` doesn't work good in the case of poor network.So pre-download audio/video is a good idea to avoid no sense of waiting.
+`DownloadManager` is a good partner of `MediaLoader`.
+
+Just use `DownloadManager.enqueue(Request request, DownloadListener listener)` to start and `DownloadManager.stop(String url)` to stop pre-downloading.
+
+More useful method such as `pause`,`resume` and so on are available in `DownloadManager`.
+
+See [API list](#api-list) for more details.
+
+## API list
+
 #### MediaLoader
 
-|function|API|
+|desc|API|
 |------|------|
 | get MediaLoader instance| MediaLoader#getInstance(Context context)|
 | initialize MediaLoader| MediaLoader#init(MediaLoaderConfig mediaLoaderConfig)|
@@ -56,7 +100,7 @@ videoView.setVideoPath(proxyUrl);
 
 #### MediaLoaderConfig.Builder
 
-|function|API|
+|desc|API|
 |------|------|
 | set cache root dir| MediaLoaderConfig.Builder#cacheRootDir(File file)|
 | set cache file name generator| MediaLoaderConfig.Builder#cacheFileNameGenerator(FileNameCreator fileNameCreator)|
@@ -70,7 +114,7 @@ videoView.setVideoPath(proxyUrl);
 
 #### DownloadManager
 
-|function|API|
+|desc|API|
 |------|------|
 | get MediaLoader instance| DownloadManager#getInstance(Context context)|
 | start download| DownloadManager#enqueue(Request request)|
@@ -92,7 +136,7 @@ See `sample` project.<br>
 ![image](https://github.com/yangwencan2002/MediaLoader/blob/master/sample2.jpg)
 
 ## FAQ
-#### 1.What is the default initialization configuration for MediaLoader?
+#### 1.What is the default initial configuration for MediaLoader?
 
 |config key|default value|
 |------|------|
@@ -104,26 +148,15 @@ See `sample` project.<br>
 |download thread pool size|3|
 |download thread priority|Thread.MAX_PRIORITY|
 
-#### 2.How to change the default initialization configuration?
-```java
-        MediaLoaderConfig mediaLoaderConfig = new MediaLoaderConfig.Builder(this)
-                .cacheRootDir(DefaultConfigFactory.createCacheRootDir(this, "my_cache_dir"))
-                .cacheFileNameGenerator(new HashCodeFileNameCreator())
-                .maxCacheFilesCount(100)
-                .maxCacheFilesSize(100 * 1024 * 1024)
-                .maxCacheFileTimeLimit(5 * 24 * 60 * 60)
-                .downloadThreadPoolSize(3)
-                .downloadThreadPriority(Thread.NORM_PRIORITY)
-                .build();
-        MediaLoader.getInstance(this).init(mediaLoaderConfig);
-```
+## Change log
+See [release notes](https://github.com/yangwencan2002/MediaLoader/releases)
 
-## Where released?
-[bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
+## Where released
+See [bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
 
 ## License
 
-    Copyright 2017 Vincan Yang
+    Copyright 2016-2017 Vincan Yang
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
