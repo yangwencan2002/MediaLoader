@@ -1,4 +1,4 @@
-![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.jpg)
+![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.png)
 # MediaLoader
 [![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
 [![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
@@ -18,6 +18,7 @@
 - [FAQ](#faq)
 - [Change log](#change-log)
 - [Where released](#where-released)
+- [Support](#support)
 - [License](#license)
 
 ## Introduction

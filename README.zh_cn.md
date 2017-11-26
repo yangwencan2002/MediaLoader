@@ -1,4 +1,4 @@
-![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.jpg)
+![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.png)
 # MediaLoader-音视频边下边播组件
 [![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
 [![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
@@ -17,6 +17,7 @@
 - [FAQ](#faq)
 - [更新日志](#更新日志)
 - [版本发布](#版本发布)
+- [支持帮助](#支持帮助)
 - [License](#license)
 
 ## 简介
