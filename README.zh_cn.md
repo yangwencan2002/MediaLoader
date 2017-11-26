@@ -1,3 +1,4 @@
+![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.jpg)
 # MediaLoader-音视频边下边播组件
 [![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
 [![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
@@ -148,18 +149,11 @@ DEMO请直接参见源码中的sample工程，它就几种常见的边下边播�
 ## 版本发布
 [bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
 
+## 支持帮助
+1. 阅读[sample](https://github.com/yangwencan2002/MediaLoader/tree/master/sample)
+2. 阅读[源码](https://github.com/yangwencan2002/MediaLoader/tree/master)
+3. 创建[issue](https://github.com/yangwencan2002/MediaLoader/issues)
+4. 联系我们
+
 ## License
-
-    Copyright 2016-2017 Vincan Yang
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+MediaLoader是基于Apache-2.0许可证。详细请看[LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE)。

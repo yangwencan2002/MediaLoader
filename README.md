@@ -1,3 +1,4 @@
+![logo](https://github.com/yangwencan2002/MediaLoader/blob/master/logo.jpg)
 # MediaLoader
 [![Build Status](https://api.travis-ci.org/yangwencan2002/MediaLoader.svg?branch=master)](https://travis-ci.org/yangwencan2002/MediaLoader/)
 [![Download](https://api.bintray.com/packages/yangwencan2002/maven/MediaLoader/images/download.svg) ](https://bintray.com/yangwencan2002/maven/MediaLoader/_latestVersion)
@@ -154,18 +155,12 @@ See [release notes](https://github.com/yangwencan2002/MediaLoader/releases)
 ## Where released
 See [bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
 
+## Support
+Any problem?
+1. Learn more from [sample](https://github.com/yangwencan2002/MediaLoader/tree/master/sample).
+2. Read the [source code](https://github.com/yangwencan2002/MediaLoader/tree/master).
+3. New [issue](https://github.com/yangwencan2002/MediaLoader/issues)
+4. Contact us for help.
+
 ## License
-
-    Copyright 2016-2017 Vincan Yang
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+MediaLoader is under the Apache-2.0 license. See the [LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE) file for details.
