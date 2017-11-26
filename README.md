@@ -13,7 +13,7 @@
   - [Listen downloading status](#listen-downloading-status)
   - [Change initial configuration](#change-initial-configuration)
   - [Pre-download](#pre-download)
-- [API list](#api-list)
+- [Documentation](#documentation)
 - [Sample](#sample)
 - [FAQ](#faq)
 - [Change log](#change-log)
@@ -82,7 +82,7 @@ More useful method such as `pause`,`resume` and so on are available in `Download
 
 See [API list](#api-list) for more details.
 
-## API list
+## Documentation
 
 #### MediaLoader
 
@@ -160,8 +160,8 @@ See [bintray.com](https://bintray.com/yangwencan2002/maven/MediaLoader)
 Any problem?
 1. Learn more from [sample](https://github.com/yangwencan2002/MediaLoader/tree/master/sample).
 2. Read the [source code](https://github.com/yangwencan2002/MediaLoader/tree/master).
-3. New [issue](https://github.com/yangwencan2002/MediaLoader/issues)
+3. New [issue](https://github.com/yangwencan2002/MediaLoader/issues).
 4. Contact us for help.
 
 ## License
-MediaLoader is under the Apache-2.0 license. See the [LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE) file for details.
+`MediaLoader` is under the Apache-2.0 license. See the [LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE) file for details.

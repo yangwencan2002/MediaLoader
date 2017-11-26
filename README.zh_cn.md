@@ -12,7 +12,7 @@
   - [监听下载状态](#监听下载状态)
   - [更改初始配置](#更改初始配置)
   - [预下载](#预下载)
-- [功能清单](#功能清单)
+- [文档](#文档)
 - [DEMO](#demo)
 - [FAQ](#faq)
 - [更新日志](#更新日志)
@@ -77,7 +77,7 @@ videoView.setVideoPath(proxyUrl);
 
 更多细节请参考[功能清单](#功能清单)。
 
-## 功能清单
+## 文档
 #### 边下边播（MediaLoader）：
 
 |描述|API|
@@ -157,4 +157,4 @@ DEMO请直接参见源码中的sample工程，它就几种常见的边下边播�
 4. 联系我们
 
 ## License
-MediaLoader是基于Apache-2.0许可证。详细请看[LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE)。
+`MediaLoader`是基于Apache-2.0许可证。详细请看[LICENSE](https://github.com/yangwencan2002/MediaLoader/blob/master/LICENSE)。
